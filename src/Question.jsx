@@ -10,8 +10,7 @@ export default function Question() {
 
     // Farklı prompt1 çıktıları için dizi oluştur
     const prompts = [
-        "Bana ilkokul düzeyinde 1 tane matematik problemi yaz ",
-        "Bana 1 adet çarpma işlemi sor ",
+        "Bana ilkokul düzeyinde 10 tane basit matematik problemi yaz ",
         // Diğer prompt1 çıktılarını ekleyin
     ];
 

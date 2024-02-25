@@ -8,6 +8,13 @@
   height: auto; /* Sayfanın tam yüksekliği */
   overflow: hidden;
 }
+
+.imginput{
+  display: flex;
+  justify-content: center!important;
+  align-items: center;
+  margin: 20%;
+}
 .baslik{
   margin: 5%;
 }
@@ -24,6 +31,7 @@ p{
   display: flex;
   justify-content: center;
   text-align: center;
+  bottom: 0;
 }
 
 /* Diğer stillemeleri ekleyebilirsiniz */
@@ -101,6 +109,11 @@ body {
 }
 .homeh1{
   font-size: 16vh;
+}
+.h1-input{
+  margin : 5%;
+  justify-content: center;
+  text-align: center;
 }
 .button1 {
   background-color: white;
@@ -194,5 +207,24 @@ svg text {
   justify-content: center!important;
   align-items: center!important;
   width: 100%!important;
-  height: 85vh;
+  height: 120vh;
+  margin-top: 10%;
+  margin-bottom: 10% ;
+}
+.input{
+  width: 100%;
+}
+.foto{
+  border-color: #000000;
+  border: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.login{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

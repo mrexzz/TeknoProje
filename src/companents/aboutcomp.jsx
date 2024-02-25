@@ -1,4 +1,6 @@
 import { useSpring, animated } from 'react-spring';
+import MovingComponent from 'react-moving-text';
+
 
 const About = () => {
   const fadeAnimation = useSpring({
@@ -44,9 +46,19 @@ const About = () => {
             </div>
           </div>
           <div>
+            <MovingComponent
+              type="fadeInFromLeft"
+              duration="1000ms"
+              delay="0.5s"
+              direction="normal"
+              timing="ease"
+              iteration="1"
+              fillMode="none">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ipsa nobis sit? Exercitationem quo, natus doloribus architecto totam fuga quaerat necessitatibus at tempore, repellat veritatis. Quaerat maxime exercitationem itaque nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione perspiciatis soluta esse aliquid omnis molestiae iusto facilis recusandae. Quidem quasi a, sed in tempore alias repellat cumque. Ipsum, quae?
             </p>
+            </MovingComponent>
+
           </div>
           <div className="container mt-6 mb-5">
             <div className="row">

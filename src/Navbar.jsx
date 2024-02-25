@@ -12,7 +12,7 @@ function Navbar() {
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul className="navbar-nav">
                         <NavLink className="nav-link mx-2" to="/Home">Home</NavLink>
-                        <NavLink className="nav-link mx-2" to="/project">Projemiz</NavLink>  
+                        <NavLink className="nav-link mx-2" to="/form">Projemiz</NavLink>  
                         <NavLink className="nav-link mx-2" to="/about">Hakkımızda</NavLink>                      
                         <NavLink className="mx-2 btn btn-dark justify-content-end" to="/contact">İletişim</NavLink>      
                 </ul>

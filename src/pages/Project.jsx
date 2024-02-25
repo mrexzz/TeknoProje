@@ -1,101 +1,34 @@
-import { useState } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import {  Link } from "react-router-dom";
 
-export default function Question() {
-    const [loading, setLoading] = useState(false);
-    const [apiData, setApiData] = useState([]);
-    const [Testdata, setTestData] = useState([]);
-    const [load, setLoad] = useState(false);
-    const genAI = new GoogleGenerativeAI("AIzaSyAbeuGNRsVFBg18s4EigUsvtBlL9qOuEZA");
-
-    // Farklı prompt1 çıktıları için dizi oluştur
-    const prompts = [
-        "Bana ilkokul düzeyinde 1 tane matematik problemi yaz ",
-        "Bana 1 adet çarpma işlemi sor ",
-        // Diğer prompt1 çıktılarını ekleyin
-    ];
-
-    const fetchData = async () => {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-
-        // Rastgele bir prompt1 seç
-        const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
-
-        const prompt1 = `
-            ${randomPrompt}
-        `;
-
-        const result = await model.generateContent(prompt1);
-        const response = await result.response;
-        const text = response.text();
-        return text;
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        const fetchDataArray = Array.from({ length: 10 }, async () => await fetchData());
-        const results = await Promise.all(fetchDataArray);
-        setApiData(results);
-        setLoading(false);
-        setTestData([]);
-        setLoad(false);
-    };
-
-    const Data = async () => {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-        const answersArray = apiData.map((promptResult) => {
-            const prompt = `${promptResult} sorulan sorunun cevabını yaz`;
-            return model.generateContent(prompt);
-        });
-
-        const results = await Promise.all(answersArray);
-        const answers = results.map((result) => result.response.text());
-        setTestData(answers);
-        setLoad(false);
-    };
-
-    const answer = async (a) => {
-        a.preventDefault();
-        setLoad(true);
-        await Data();
-    };
-
+export default function ProjectMath() {
     return (
         <>
             <div className="container">
-                <h1>Project X</h1>
-                <h3>Soru Yapıcı</h3>
-                <div className="mt-5 mb-5" id="buton1">
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <button type="submit" className="btn btn-primary mt-3 col-lg-12">
-                                Soru Üret
-                            </button>
-                        </div>
-                    </form>
+                <h1>Matematik</h1>
+                <Link to={'/projectmath'}>
+                <img src="https://img.freepik.com/free-vector/scientific-formulas-chalkboard_23-2148494010.jpg?w=1060&t=st=1708177250~exp=1708177850~hmac=beb5dfb1febc7e62c0f6081d6a3bfd2eb1996effdd62c5b818dc196a9b276f78" className="imgcard project-img" alt="..."/>
+                <div className="card-body">
                 </div>
-                <div className="try">
-                    {!loading && apiData.map((data, index) => <p key={index} className="text-align-left">{data}</p>)}
-                    {loading && <p>Loading...</p>}
+                </Link>
+                <h1>Edebiyat</h1>
+                <Link to={'/home'}>
+                <img src="https://perspektif.eu/wp-content/uploads/2020/05/Hollandada-T%C3%BCrk%C3%A7e-Edebiyat.jpg" className="imgcard project-img" alt="..." />
+                <div className="card-body">
                 </div>
-            </div>
-            <div className="container">
-            <div className="mt-5 mb-5">
-                <form onSubmit={answer}>
-                    <div>
-                        <button type="submit" className="btn btn-primary mt-3 col-lg-12">
-                            Soruyu Cevapla
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div className="try">
-                {!load && Testdata.map((data, index) => <p key={index} className="text-align-left">{data}</p>)}
-                {load && <p>Loading...</p>}
-            </div>
+                </Link>
+                <h1>Dil</h1>
+                <Link to={'/home'}>
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*r-x8VbavKLjL6mSSohhjKw.png" className="imgcard project-img" alt="..." />
+                <div className="card-body">
+                </div>
+                </Link>
+                <h1>Genel</h1>
+                <Link to={'/inputpage'}>
+                <img src="https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="imgcard project-img" alt="..." />
+                <div className="card-body" style={{marginTop:'10vh'}}>
+                </div>
+                </Link>
             </div>
         </>
-    );
+    )
 }
-
