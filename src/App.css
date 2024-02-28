@@ -8,12 +8,15 @@
   height: auto; /* Sayfanın tam yüksekliği */
   overflow: hidden;
 }
-
 .imginput{
   display: flex;
   justify-content: center!important;
   align-items: center;
   margin: 20%;
+}
+.bars{
+  margin-top:40%;
+  height: 10%;
 }
 .baslik{
   margin: 5%;
@@ -68,6 +71,8 @@ p{
   font-size:1.2vw;
 }
 .nav-logo{
+  width: 60px;
+  height: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,6 +112,9 @@ body {
   margin: 10%;
   margin-top: 20px;
 }
+.margintry{
+  margin-right: 100px;
+}
 .homeh1{
   font-size: 16vh;
 }
@@ -145,8 +153,6 @@ body {
   text-align: center;
   margin: 5vh;
 }
-
-
 .corner {
   border-radius: 15px 50px 30px;
   background: wheat;
@@ -227,4 +233,70 @@ svg text {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+/* styles.css */
+.input-container {
+  max-width: 300px;
+  text-align: center;
+}
+
+.input-container input,
+.input-container button {
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus,
+.input-container button:hover {
+  transform: translateY(-5px);
+}
+.container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  background-image: url('https://via.placeholder.com/150'); /* Profil resmi */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%; /* Yuvarlak profil resmi */
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Profil resmi için gölge efekti */
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.1); /* Hover'da profil resminin büyümesi */
+}
+
+.profile-info {
+  max-width: 400px;
+}
+
+.profile-info h1 {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+/* Navbar.css */
+.navbar-toggler.active .navbar-toggler-icon::before {
+  content: '\f00d'; /* "close" icon */
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
 }

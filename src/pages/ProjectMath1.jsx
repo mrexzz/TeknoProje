@@ -4,13 +4,12 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 export default function App() {
     const [text, setGeneratedText] = useState('');
     const [answertext, setAnswerText] = useState('');
+    const [answertextTry, setAnswerTextTry] = useState('');
 
 
-    // Access your API key (see "Set up your API key" above)
     const genAI = new GoogleGenerativeAI('AIzaSyA2vdutgmI6H61Ero8-tAzEQe60OHWb41k');
 
     async function run() {
-        // For text-only input, use the gemini-pro model
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
         const prompt = "10 tane matematik problemi yaz ilkokul düzeyinde ";
@@ -22,16 +21,21 @@ export default function App() {
         setGeneratedText(text);
     }
     async function answer() {
-        // For text-only input, use the gemini-pro model
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
         const prompt1 = `${text} sorulan soruları tekrar yazmadan sırasıyla çözümü basamak basamak anlatarak cevapla`;
+        const prompt2 = `${text} soruları cevapla`;
 
         const sonuc = await model.generateContent(prompt1);
         const cevap = await sonuc.response;
         const answertext = await cevap.text();
 
+        const AnswerTry = await model.generateContent(prompt2);
+        const cevapTry = await AnswerTry.response;
+        const answertextTry = await cevapTry.text();
+
         setAnswerText(answertext);
+        setAnswerTextTry(answertextTry);
     }
 
     return (

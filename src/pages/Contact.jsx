@@ -8,6 +8,7 @@ export default function Contact() {
         <img src="https://miro.medium.com/v2/resize:fit:1000/1*qYUvh-EtES8dtgKiBRiLsA.png" alt="" />
         </div>
         <div className="col">
+          <h1 className="text-center">İletişim Bilgileri</h1>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, iusto saepe sed itaque, illo possimus quibusdam facilis, sapiente sequi autem molestias. Iusto voluptatum repellendus id, tenetur accusantium natus ut dolorum.
         </div>
         </div>

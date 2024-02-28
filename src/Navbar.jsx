@@ -14,9 +14,12 @@ function Navbar() {
                         <NavLink className="nav-link mx-2" to="/Home">Home</NavLink>
                         <NavLink className="nav-link mx-2" to="/form">Projemiz</NavLink>  
                         <NavLink className="nav-link mx-2" to="/about">Hakkımızda</NavLink>                      
-                        <NavLink className="mx-2 btn btn-dark justify-content-end" to="/contact">İletişim</NavLink>      
+                        <NavLink className="mx-2 btn btn-dark justify-content-end" to="/contact">İletişim</NavLink>   
+
                 </ul>
             </div>
+            <a className="navbar-brand" id="navbar"href="/profile">
+            <img src="https://static.thenounproject.com/png/2265555-200.png" width="40" height="40" className="d-inline-block align-top margintry" alt="logo" /></a>
         </nav>
     );
 }

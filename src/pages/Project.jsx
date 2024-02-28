@@ -10,8 +10,20 @@ export default function ProjectMath() {
                 <div className="card-body">
                 </div>
                 </Link>
+                <h1>Resimli Çözüm</h1>
+                <Link to={'/img-input'}>
+                <img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  className="imgcard project-img" alt="..." />
+                <div className="card-body" style={{marginTop:'10vh'}}>
+                </div>
+                </Link>
+                <h1>Direkt Yaz</h1>
+                <Link to={'/inputpage'}>
+                <img src="https://images.pexels.com/photos/275143/pexels-photo-275143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="imgcard project-img" alt="..." />
+                <div className="card-body" style={{marginTop:'10vh'}}>
+                </div>
+                </Link>
                 <h1>Edebiyat</h1>
-                <Link to={'/home'}>
+                <Link to={'/edebiyat'}>
                 <img src="https://perspektif.eu/wp-content/uploads/2020/05/Hollandada-T%C3%BCrk%C3%A7e-Edebiyat.jpg" className="imgcard project-img" alt="..." />
                 <div className="card-body">
                 </div>

@@ -1,8 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Animation from "./Animation";
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
+
 
 export default function Home() {
-  
+  <link
+    rel="stylesheet"
+    href="https://video-react.github.io/assets/video-react.css"
+  />
   return (
     <>
       <div className='overflow-hidden'>
@@ -18,7 +24,7 @@ export default function Home() {
               </p>
               <NavLink className="mx-2 button button1 " to="/contact">İletişim</NavLink>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 ">
               <img
                 className="img-fluid about-image"
                 src="../src/assets/projeekle.png"
@@ -28,7 +34,7 @@ export default function Home() {
           </div>
         </div>
         <div className="corner">
-          <div style={{marginTop:"5%"}}>
+          <div style={{ marginTop: "5%" }}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ipsa nobis sit? Exercitationem quo, natus doloribus architecto totam fuga quaerat necessitatibus at tempore, repellat veritatis. Quaerat maxime exercitationem itaque nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione perspiciatis soluta esse aliquid omnis molestiae iusto facilis recusandae. Quidem quasi a, sed in tempore alias repellat cumque. Ipsum, quae?
             </p>
@@ -54,12 +60,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container" style={{marginBottom:"1%"}}><Animation></Animation></div>
-      </div>
+        <div className="container" style={{ marginBottom: "5%" }}><Animation></Animation>
+        </div>
+        <Player>
+          <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+        </Player></div>
       <div className='overflow-hidden'>
         <div className="container mt-7 mb-5" >
           <div className="row">
-          <div className="col-md-3">
+            <div className="col-md-3">
               <img
                 className="img-fluid about-image"
                 src="../src/assets/blockchain-2.png"
@@ -85,7 +94,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
+
     </>
   )
 }
