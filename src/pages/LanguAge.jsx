@@ -6,7 +6,7 @@ export default function Language() {
   const [answertext, setAnswerText] = useState('');
 
 
-  const genAI = new GoogleGenerativeAI('AIzaSyA2vdutgmI6H61Ero8-tAzEQe60OHWb41k');
+  const genAI = new GoogleGenerativeAI("YOUR APİ KEY");
 
   async function run() {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
