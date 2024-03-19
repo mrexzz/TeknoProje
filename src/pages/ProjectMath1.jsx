@@ -8,7 +8,7 @@ export default function App() {
     const [load, setLoad] = useState(false); 
 
 
-    const genAI = new GoogleGenerativeAI('AIzaSyA2vdutgmI6H61Ero8-tAzEQe60OHWb41k');
+    const genAI = new GoogleGenerativeAI("YOUR APİ KEY");
 
     async function run() {
         setLoading(true); 
